@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: agentshield-x-redline
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: AGENTSHIELD_SIGNING_KEY
+        generateValue: true
+      - key: AGENTSHIELD_ADMIN_KEY
+        generateValue: true
+      - key: AGENTSHIELD_DATA_DIR
+        value: /tmp/agentshield-data

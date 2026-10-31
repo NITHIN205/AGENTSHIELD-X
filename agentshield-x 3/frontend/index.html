@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#060914"><title>AgentShield X | Security Operations</title>
+<link rel="stylesheet" href="/assets/styles.css?v=redline-backend-v5">
+
+<style id="agentshield-cinematic-v3">
+/* Critical visual layer is inline so Safari cannot keep an older stylesheet */
+:root{--v3-cyan:#68efff;--v3-blue:#378bff;--v3-violet:#a18aff;--v3-bg:#030713}
+body{background:#030713!important;background-image:radial-gradient(ellipse at 72% 12%,rgba(24,105,190,.34),transparent 38%),radial-gradient(ellipse at 12% 58%,rgba(94,48,180,.22),transparent 38%),radial-gradient(ellipse at 70% 100%,rgba(0,178,202,.13),transparent 42%),linear-gradient(130deg,#030713,#09172b 52%,#050817)!important;background-attachment:fixed!important}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.17;background-image:linear-gradient(rgba(83,194,233,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(83,194,233,.13) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(ellipse at 55% 40%,black,transparent 78%)}
+body:after{content:"";position:fixed;z-index:0;pointer-events:none;inset:-35%;background:conic-gradient(from 0deg at 50% 50%,transparent 0 25%,rgba(37,186,241,.07) 31%,transparent 39% 66%,rgba(137,94,255,.07) 73%,transparent 82%);filter:blur(70px);animation:v3Orbit 45s linear infinite}
+.sidebar,.main{z-index:1}.sidebar{background:linear-gradient(180deg,rgba(3,9,20,.98),rgba(7,11,27,.97))!important;border-right:1px solid rgba(76,210,245,.25)!important;box-shadow:15px 0 55px #0006}
+.brand-icon{border-color:#39cfe9!important;box-shadow:0 0 24px #21c5e855,inset 0 0 20px #21c5e833!important}
+.topbar{background:rgba(3,8,18,.78)!important;backdrop-filter:blur(20px);border-color:#4fcbe52b!important}
+.hero{min-height:190px!important;padding:20px 24px 20px 0!important;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(8,25,47,.72),rgba(14,50,82,.23),transparent);border:1px solid rgba(73,195,232,.13);border-radius:12px;pointer-events:none}
+.hero:after{content:"";position:absolute;right:2%;top:-160px;width:460px;height:430px;background:repeating-radial-gradient(circle at center,transparent 0 24px,rgba(80,218,247,.17) 25px 26px,transparent 27px 47px);mask-image:radial-gradient(circle,black 10%,transparent 72%);animation:v3Orbit 55s linear infinite;pointer-events:none}
+.hero h1{font-size:clamp(36px,4vw,54px)!important;text-shadow:0 0 35px #42c8ff22}
+.hero h1 em{background:linear-gradient(100deg,#7bf5ff,#48a9ff 52%,#b18cff)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;filter:drop-shadow(0 0 17px #5acfff55)}
+.hero-orbit{z-index:2;transform:scale(1.28);filter:drop-shadow(0 0 28px #37d5ff55)}
+.orbit{border-color:#57dff45c!important;box-shadow:inset 0 0 24px #3adfff12,0 0 20px #3adfff12}
+.o1{border-style:dashed;animation:v3Orbit 20s linear infinite}.o2{border-color:#a58aff66!important}.o3{border-style:dotted;animation:v3Orbit 38s linear infinite reverse}
+.cinema-telemetry{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:1px!important;margin:12px 0 17px!important;padding:1px!important;border:1px solid #52cde83d!important;border-radius:9px!important;overflow:hidden!important;background:linear-gradient(90deg,#1b6e8b66,#5741a666)!important;box-shadow:0 12px 36px #0005,0 0 25px #26c9e20b!important}
+.cinema-telemetry>div{display:block!important;min-width:0!important;padding:13px 15px!important;background:linear-gradient(145deg,rgba(10,25,45,.98),rgba(5,14,28,.98))!important}
+.cinema-telemetry small{display:block!important;font:8px 'DM Mono',monospace!important;letter-spacing:1.25px!important;color:#7797b7!important;margin:0 0 7px!important}
+.cinema-telemetry b{display:block!important;font:600 10px 'DM Mono',monospace!important;letter-spacing:1px!important;color:#d8f6ff!important}
+.cinema-telemetry b i{display:inline!important;color:#6af0bd!important}
+.cinema-telemetry .telemetry-led{display:inline-block!important;width:6px!important;height:6px!important;background:#66f0bf!important;border-radius:50%!important;box-shadow:0 0 12px #66f0bf!important;margin:0 7px 0 0!important}
+.metric,.panel{background:linear-gradient(145deg,rgba(13,29,50,.97),rgba(5,13,27,.97))!important;border-color:#4eb8e039!important;box-shadow:0 16px 44px #0005,inset 0 1px #ffffff0d!important;backdrop-filter:blur(18px)}
+.metric{min-height:132px!important}.metric strong{font-size:32px!important;text-shadow:0 0 20px #4bd8f422}
+.metric:hover{transform:translateY(-5px)!important;border-color:#63eaff99!important;box-shadow:0 20px 50px #0007,0 0 30px #2bbde522!important}
+.panel-title small,.eyebrow{color:#75eaff!important;text-shadow:0 0 13px #43dfff55}
+.radar-panel{background:radial-gradient(ellipse at 50% 48%,#0a809d44,transparent 52%),linear-gradient(145deg,#0d2036,#050e1e)!important}
+.radar{width:205px!important;height:205px!important;border-color:#5be6f477!important;box-shadow:0 0 55px #25cbe522,inset 0 0 38px #25cbe51a!important}
+.radar:before,.radar:after{border-color:#52d8f45c!important}
+.radar-sweep{background:conic-gradient(from 0deg,transparent 0 245deg,#3be3f509 300deg,#43e5f477 358deg,transparent 360deg)!important}
+.gate-panel{background:radial-gradient(ellipse at 100% 0%,#1b77b64a,transparent 52%),linear-gradient(145deg,#10233a,#050e1e)!important}
+.primary{background:linear-gradient(105deg,#087f9d,#176db8 58%,#5945a8)!important;border:1px solid #63e5f477!important;box-shadow:0 9px 30px #058db544,inset 0 1px #ffffff30!important}
+.primary:hover{filter:brightness(1.2);box-shadow:0 12px 38px #0aa9d955!important}
+.topology-panel{background:radial-gradient(ellipse at 50% 45%,#087e9c38,transparent 58%),linear-gradient(145deg,#0b2038,#040d1d)!important;border-color:#4bdcf45c!important}
+.topology-wrap{height:330px!important;background:linear-gradient(180deg,#061528aa,#030a16aa)!important;border-color:#4bdcf42c!important}
+.topology-grid{opacity:.43!important;background-size:27px 27px!important}
+.network-lines path{stroke:#5ee8ff9c!important;stroke-width:1.8!important;stroke-dasharray:4 7!important}
+.network-node .node-ring{stroke:#67efff!important;filter:drop-shadow(0 0 10px #37dfff88)!important}
+.gateway-node .node-ring{stroke:#ad92ff!important;filter:drop-shadow(0 0 16px #9b7cffbb)!important}
+.topology-scanline{position:absolute;left:0;right:0;height:85px;top:-90px;pointer-events:none;background:linear-gradient(180deg,transparent,#52e6ff20,transparent);animation:v3Scan 6s linear infinite}
+.topology-corner{border-color:#65eaff!important}
+.audit-panel,.policy-panel{background:linear-gradient(145deg,rgba(12,27,46,.98),rgba(4,12,24,.98))!important}
+.nav.active{background:linear-gradient(90deg,#0e3446,#102638)!important;border-color:#42c9e64d!important;box-shadow:inset 3px 0 #65eaff,0 0 24px #22c9e511!important}
+.status.online,.status.live,.tag.live-tag{box-shadow:0 0 18px #42e6b512}
+.page{animation:v3Enter .4s ease both}
+@keyframes v3Orbit{to{transform:rotate(360deg)}}
+@keyframes v3Scan{to{top:115%}}
+@keyframes v3Enter{from{opacity:.5;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(max-width:850px){.cinema-telemetry{grid-template-columns:repeat(3,minmax(0,1fr))!important}.cinema-telemetry>div:nth-child(n+4){display:none!important}}
+@media(max-width:650px){.cinema-telemetry{grid-template-columns:repeat(2,minmax(0,1fr))!important}.cinema-telemetry>div:nth-child(n+4){display:block!important}.topology-wrap{height:245px!important}}
+@media(prefers-reduced-motion:reduce){body:after,.hero:after,.o1,.o3,.topology-scanline{animation:none!important}}
+</style>
+
+
+<style id="agentshield-redblack-v4">
+:root{--bg:#050506;--panel:#100d10;--line:rgba(255,53,67,.24);--cyan:#ff3547;--violet:#ff1744;--green:#ff5b65;--red:#ff263f;--ice:#ff4657}
+html{background:#040405}
+body{color:#f5edf0!important;background:radial-gradient(ellipse at 76% 8%,rgba(164,8,24,.36),transparent 36%),radial-gradient(ellipse at 5% 60%,rgba(92,4,19,.28),transparent 38%),radial-gradient(ellipse at 85% 90%,rgba(201,20,40,.13),transparent 42%),linear-gradient(135deg,#030304 0%,#10090c 48%,#050405 100%)!important;background-attachment:fixed!important}
+body:before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(255,48,64,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(255,48,64,.13) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(ellipse at 58% 40%,black,transparent 78%)}
+body:after{content:"";position:fixed;inset:-40%;z-index:0;pointer-events:none;background:conic-gradient(from 0deg at 50% 50%,transparent 0 24%,rgba(255,22,47,.09) 29%,transparent 38% 66%,rgba(255,90,55,.055) 73%,transparent 82%);filter:blur(75px);animation:redVortex 48s linear infinite}
+.ambient{opacity:.42!important;background-image:radial-gradient(circle,rgba(255,67,79,.55) 1px,transparent 1.5px)!important;background-size:34px 34px!important}
+.ambient:after{background:radial-gradient(ellipse at 25% 35%,rgba(255,20,48,.2),transparent 34%),radial-gradient(ellipse at 75% 55%,rgba(157,0,28,.18),transparent 38%)!important;filter:blur(60px)!important}
+.sidebar{background:linear-gradient(180deg,rgba(7,5,7,.99),rgba(15,5,9,.98))!important;border-right:1px solid rgba(255,49,65,.28)!important;box-shadow:15px 0 55px #000a,5px 0 35px #e0002510!important}
+.brand-icon{border-color:#ff3449!important;color:#ff5263!important;box-shadow:0 0 26px #ff1d3c66,inset 0 0 20px #ff1d3c33!important}
+.brand-icon:after{border-color:#ff4054!important}
+.nav{color:#9f8990!important}.nav.active{color:#fff!important;background:linear-gradient(90deg,rgba(135,9,28,.42),rgba(38,9,16,.78))!important;border-color:#ff40544f!important;box-shadow:inset 3px 0 #ff344b,0 0 24px #ff18301c!important}.nav.active span{color:#ff596a!important}.nav:hover{background:#ff24300e!important;color:#ffe9ec!important}
+.topbar{background:rgba(5,4,6,.82)!important;border-bottom:1px solid #ff34442c!important;backdrop-filter:blur(20px)}
+.crumb,.crumb strong{color:#e9cbd0!important}
+.hero{min-height:195px!important;border:1px solid #ff34442c!important;border-radius:12px!important;padding:22px 24px!important;background:linear-gradient(100deg,rgba(20,5,10,.88),rgba(53,5,16,.54) 56%,rgba(10,5,8,.2))!important;box-shadow:inset 0 1px #ffffff0a,0 18px 55px #0008,0 0 36px #e9002510!important}
+.hero:before{content:"";position:absolute;inset:0;border:0!important;border-radius:inherit;background:linear-gradient(90deg,transparent,rgba(255,37,57,.08) 68%,transparent)!important;pointer-events:none}
+.hero:after{content:"";position:absolute;right:2%;top:-150px;width:480px;height:460px;background:repeating-radial-gradient(circle at center,transparent 0 23px,rgba(255,50,68,.2) 24px 25px,transparent 26px 45px)!important;mask-image:radial-gradient(circle,black 8%,transparent 73%);animation:redVortex 42s linear infinite;pointer-events:none}
+.hero h1{color:#fff!important;text-shadow:0 0 34px #ff243522,0 5px 28px #000!important}.hero h1 em{background:linear-gradient(100deg,#ff7882,#ff233f 48%,#ff9a65)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;filter:drop-shadow(0 0 17px #ff193d66)}
+.eyebrow,.panel-title small,.crumb strong{color:#ff6977!important;text-shadow:0 0 12px #ff1d3d55}
+.hero-orbit{filter:drop-shadow(0 0 24px #ff173d66)!important;transform:scale(1.28)}.orbit{border-color:#ff536477!important;box-shadow:inset 0 0 25px #ff163d18,0 0 20px #ff163d1c!important}.o1,.o3{border-color:#ff485d88!important}.o2{border-color:#ff9a6b88!important}.orbit-core{color:#ff6373!important;filter:drop-shadow(0 0 12px #ff294f)!important}
+.cinema-telemetry{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:1px!important;margin:12px 0 17px!important;padding:1px!important;border:1px solid #ff394b55!important;border-radius:9px!important;overflow:hidden!important;background:linear-gradient(90deg,#a10d25,#4a0c18)!important;box-shadow:0 12px 36px #0008,0 0 28px #ff173d12!important}
+.cinema-telemetry>div{display:block!important;padding:13px 15px!important;min-width:0!important;background:linear-gradient(145deg,rgba(20,10,14,.99),rgba(8,6,8,.99))!important}.cinema-telemetry small{display:block!important;font:8px 'DM Mono',monospace!important;letter-spacing:1.2px!important;color:#a67c85!important;margin:0 0 7px!important}.cinema-telemetry b{display:block!important;font:600 10px 'DM Mono',monospace!important;letter-spacing:1px!important;color:#ffe8eb!important}.cinema-telemetry b i{color:#ff6573!important}.cinema-telemetry .telemetry-led{display:inline-block!important;width:6px!important;height:6px!important;background:#ff4058!important;border-radius:50%!important;box-shadow:0 0 12px #ff304b!important;margin-right:7px!important}
+.metric,.panel{background:linear-gradient(145deg,rgba(22,13,17,.97),rgba(8,7,9,.98))!important;border-color:#ff3b503d!important;box-shadow:0 16px 44px #0009,inset 0 1px #ffffff0b!important;backdrop-filter:blur(18px)!important}
+.metric{position:relative;overflow:hidden;min-height:132px!important}.metric:after{content:"";position:absolute;right:-75px;top:-95px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,#ff24352b,transparent 68%)!important}.metric strong{color:#fff!important;text-shadow:0 0 22px #ff40552c!important}.metric:hover{transform:translateY(-5px)!important;border-color:#ff6577aa!important;box-shadow:0 20px 50px #000b,0 0 30px #ff1f3b20!important}
+.radar-panel{background:radial-gradient(ellipse at 50% 48%,rgba(177,8,36,.25),transparent 54%),linear-gradient(145deg,#190d12,#080609)!important}.radar{border-color:#ff536c88!important;box-shadow:0 0 55px #ff1e4226,inset 0 0 38px #ff1e4218!important}.radar:before,.radar:after{border-color:#ff536c66!important}.radar-sweep{background:conic-gradient(from 0deg,transparent 0 245deg,#ff183d09 300deg,#ff294f88 358deg,transparent 360deg)!important}.radar-center{color:#ff5b6d!important;filter:drop-shadow(0 0 12px #ff244f)!important}.blip{background:#ff5368!important;box-shadow:0 0 12px #ff294f!important}.b2{background:#ffb06b!important}.b3{background:#ff4058!important}
+.gate-panel{background:radial-gradient(ellipse at 100% 0%,rgba(166,10,37,.27),transparent 54%),linear-gradient(145deg,#1a0d13,#090609)!important}.lock{color:#ff5c70!important;background:#3a0d18!important;border:1px solid #ff435555!important;box-shadow:0 0 24px #ff183d24!important}
+.primary{background:linear-gradient(105deg,#8e1026,#e21e3b 58%,#801329)!important;border:1px solid #ff6b7a88!important;box-shadow:0 9px 30px #a0002544,inset 0 1px #ffffff30!important;color:#fff!important}.primary:hover{filter:brightness(1.18);box-shadow:0 12px 38px #e0003b66!important}.secondary{border-color:#ff485c66!important;color:#ff9ba5!important}
+.topology-panel{background:radial-gradient(ellipse at 50% 45%,rgba(151,8,34,.25),transparent 58%),linear-gradient(145deg,#170c12,#070609)!important;border-color:#ff40545c!important}.topology-wrap{height:340px!important;background:linear-gradient(180deg,#16080fbb,#050407dd)!important;border-color:#ff34443b!important}.topology-grid{opacity:.48!important;background-image:linear-gradient(#ff3b501c 1px,transparent 1px),linear-gradient(90deg,#ff3b501c 1px,transparent 1px)!important;background-size:27px 27px!important}
+.network-lines path{stroke:#ff526dba!important;stroke-width:1.8!important;stroke-dasharray:4 7!important}.network-lines .secondary-line{stroke:#ff9a6b77!important}.data-packets circle{fill:#ff5368!important;filter:drop-shadow(0 0 6px #ff244f)!important}.network-node .node-ring{stroke:#ff526c!important;filter:drop-shadow(0 0 10px #ff294f88)!important}.gateway-node .node-ring{stroke:#ffad73!important;filter:drop-shadow(0 0 16px #ff542fcc)!important}.network-node text{fill:#ffd9df!important}.network-node .node-label{fill:#b78c95!important}.topology-scanline{background:linear-gradient(180deg,transparent,#ff234322,transparent)!important}.topology-corner{border-color:#ff6476!important}.topology-legend{color:#b98d96!important}.green-dot,.cyan-dot{background:#ff485e!important;box-shadow:0 0 8px #ff344e!important}.amber-dot{background:#ffb16e!important;box-shadow:0 0 8px #ff9a55!important}
+.audit-panel,.policy-panel{background:linear-gradient(145deg,rgba(20,11,15,.98),rgba(7,6,8,.98))!important}.event:hover{background:rgba(255,45,65,.07)!important}.status{border-color:#ff465744!important;color:#ff8995!important}.status i,.status.live i{background:#ff4058!important;box-shadow:0 0 8px #ff4058!important}.api-state{border-color:#ff405544!important;background:#210b12!important;color:#ff8c9a!important}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #ff5067!important;outline-offset:3px}::selection{background:#b20d2c;color:#fff}
+@keyframes redVortex{to{transform:rotate(360deg)}}
+@media(max-width:850px){.cinema-telemetry{grid-template-columns:repeat(3,minmax(0,1fr))!important}.cinema-telemetry>div:nth-child(n+4){display:none!important}}
+@media(max-width:650px){.cinema-telemetry{grid-template-columns:repeat(2,minmax(0,1fr))!important}.cinema-telemetry>div:nth-child(n+4){display:block!important}.topology-wrap{height:245px!important}.hero{min-height:155px!important}}
+@media(prefers-reduced-motion:reduce){body:after,.hero:after,.o1,.o3,.topology-scanline{animation:none!important}}
+</style>
+
+</head>
+<body>
+<div class="ambient"></div>
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">⬡</div><div><b>AGENTSHIELD <i>X</i></b><small>AI SECURITY GATEWAY</small></div></div>
+  <div class="nav-label">PLATFORM</div>
+  <button class="nav active" data-page="overview"><span>⌁</span> Overview</button>
+  <button class="nav" data-page="policies"><span>◈</span> Policy Engine</button>
+  <button class="nav" data-page="agents"><span>◎</span> Agent Identity</button>
+  <button class="nav" data-page="audit"><span>⌘</span> Audit Explorer</button>
+  <div class="side-bottom"><div class="api-state"><span class="pulse"></span><span id="sideStatus">CONNECTING API</span></div><div class="user"><div class="avatar">AS</div><div><b>Security Admin</b><small>COMMAND ACCESS</small></div></div></div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="crumb">PLATFORM <b>/</b> <strong id="crumb">OVERVIEW</strong></div><div class="top-actions"><span class="status" id="apiStatus"><i></i> API CHECKING</span><span class="status live"><i></i> LIVE MONITORING</span><span id="clock" class="clock"></span></div></header>
+<section id="overviewPage" class="page">
+  <div class="hero"><div><div class="eyebrow"><span></span> SECURITY OPERATIONS CENTER</div><h1>Command <em>Overview</em></h1><p>Monitor, inspect and control every AI agent action across your environment.</p></div><div class="hero-orbit"><div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"></div><div class="orbit-core">⬡</div><span class="orbit-dot d1"></span><span class="orbit-dot d2"></span><span class="orbit-dot d3"></span></div></div>
+
+  <div class="cinema-telemetry">
+    <div><span class="telemetry-led"></span><small>SECURITY CORE</small><b>ONLINE</b></div>
+    <div><small>ENCRYPTION</small><b>AES-256 <i>●</i></b></div>
+    <div><small>GATEWAY MODE</small><b>ZERO TRUST</b></div>
+    <div><small>THREAT SCAN</small><b class="scan-text">CONTINUOUS</b></div>
+    <div class="telemetry-coordinates"><small>SECTOR</small><b>NX-07 / 24.06</b></div>
+  </div>
+  <div class="metrics">
+    <article class="metric"><div class="metric-head"><span class="mi cyan">ϟ</span><small>LIVE TRAFFIC</small></div><strong id="activeRequests">—</strong><label>Active Requests</label><div class="spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+    <article class="metric"><div class="metric-head"><span class="mi green">✓</span><small>POLICY PASS</small></div><strong id="allowedActions">—</strong><label>Allowed Actions</label><div class="spark green-spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+    <article class="metric"><div class="metric-head"><span class="mi red">⛨</span><small>THREATS STOPPED</small></div><strong id="blockedThreats">—</strong><label>Blocked Threats</label><div class="spark red-spark"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+    <article class="metric"><div class="metric-head"><span class="mi amber">△</span><small>NEEDS ATTENTION</small></div><strong id="pendingAlerts">—</strong><label>Pending Alerts</label><div class="metric-foot">Requires review</div></article>
+  </div>
+  <div class="grid-two">
+    <section class="panel radar-panel"><div class="panel-title"><div><small>NETWORK INTELLIGENCE</small><h2>Threat Activity</h2></div><span class="tag live-tag">● SCANNING</span></div><div class="radar-stage"><div class="radar"><div class="radar-sweep"></div><div class="radar-cross h"></div><div class="radar-cross v"></div><div class="radar-center">⬡</div><b class="blip b1"></b><b class="blip b2"></b><b class="blip b3"></b></div><div class="radar-label"><span class="pulse"></span> THREAT SCANNER ACTIVE</div></div><div class="radar-stats"><div><small>THREAT LEVEL</small><b class="safe">LOW</b></div><div><small>POLICY COVERAGE</small><b id="coverage">98.6%</b></div><div><small>SCANNED TODAY</small><b id="scanned">—</b></div></div></section>
+    <section class="panel gate-panel"><div class="panel-title"><div><small>ZERO-TRUST SIMULATION</small><h2>Gatekeeper Command</h2></div><span class="lock">⌑</span></div><p>Submit a sample agent action to evaluate it against the gateway policy.</p><label class="field-label" for="action">SELECT ACTION</label><select id="action"><option value="read_database">Read database</option><option value="health_check">System health check</option><option value="delete_records">Delete records</option><option value="external_transfer">External data transfer</option><option value="file_write">Write protected file</option></select><div class="codebox"><small>REQUEST PAYLOAD</small><code>agent.execute("<span id="actionCode">read_database</span>")</code></div><button id="evaluateBtn" class="primary">◉ &nbsp; Evaluate Request <span>↗</span></button><div id="evaluation" class="evaluation hidden"></div><div class="note">CONNECTED TO LOCAL FASTAPI POLICY EVALUATOR</div></section>
+  </div>
+
+  <section class="panel topology-panel">
+    <div class="panel-title"><div><small>LIVE AGENT TOPOLOGY</small><h2>Trust Network Visualization</h2></div><span class="tag live-tag">● 06 NODES ONLINE</span></div>
+    <div class="topology-wrap">
+      <div class="topology-grid"></div>
+      <span class="topology-corner tl"></span><span class="topology-corner tr"></span>
+      <span class="topology-corner bl"></span><span class="topology-corner br"></span>
+      <div class="topology-scanline"></div>
+      <svg class="topology-svg" viewBox="0 0 900 250" role="img" aria-label="Agent security network with gateway and connected services">
+        <defs>
+          <radialGradient id="nodeGlow"><stop offset="0" stop-color="#58e8ff" stop-opacity=".8"/><stop offset="1" stop-color="#58e8ff" stop-opacity="0"/></radialGradient>
+          <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <g class="network-lines">
+          <path d="M450 126 L170 55 M450 126 L170 190 M450 126 L450 35 M450 126 L730 55 M450 126 L730 190 M450 126 L450 220"/>
+          <path d="M170 55 L450 35 L730 55 M170 190 L450 220 L730 190" class="secondary-line"/>
+        </g>
+        <g class="data-packets"><circle r="4"><animateMotion dur="3.2s" repeatCount="indefinite" path="M450 126 L170 55"/></circle><circle r="4"><animateMotion dur="4s" repeatCount="indefinite" path="M450 126 L730 190"/></circle><circle r="3"><animateMotion dur="3.6s" repeatCount="indefinite" path="M170 190 L450 126 L730 55"/></circle></g>
+        <g class="network-node gateway-node" transform="translate(450 126)"><circle r="39" class="node-halo"/><circle r="25" class="node-ring"/><text y="6" text-anchor="middle">⬡</text><text y="48" class="node-label" text-anchor="middle">GATEWAY</text></g>
+        <g class="network-node" transform="translate(170 55)"><circle r="18" class="node-ring"/><text y="5" text-anchor="middle">AI</text><text y="34" class="node-label" text-anchor="middle">AGENT 01</text></g>
+        <g class="network-node" transform="translate(170 190)"><circle r="18" class="node-ring"/><text y="5" text-anchor="middle">AI</text><text y="34" class="node-label" text-anchor="middle">AGENT 02</text></g>
+        <g class="network-node" transform="translate(450 35)"><circle r="18" class="node-ring"/><text y="5" text-anchor="middle">DB</text><text y="34" class="node-label" text-anchor="middle">DATABASE</text></g>
+        <g class="network-node" transform="translate(730 55)"><circle r="18" class="node-ring"/><text y="5" text-anchor="middle">API</text><text y="34" class="node-label" text-anchor="middle">API LAYER</text></g>
+        <g class="network-node" transform="translate(730 190)"><circle r="18" class="node-ring warning"/><text y="5" text-anchor="middle">NET</text><text y="34" class="node-label" text-anchor="middle">EXTERNAL NET</text></g>
+        <g class="network-node" transform="translate(450 220)"><circle r="18" class="node-ring"/><text y="5" text-anchor="middle">LOG</text><text y="29" class="node-label" text-anchor="middle">AUDIT STORE</text></g>
+      </svg>
+      <div class="topology-legend"><span><i class="legend-dot green-dot"></i> TRUSTED</span><span><i class="legend-dot cyan-dot"></i> INSPECTED</span><span><i class="legend-dot amber-dot"></i> EXTERNAL</span></div>
+    </div>
+  </section>
+  <section class="panel audit-panel"><div class="panel-title"><div><small>ACTIVITY STREAM</small><h2>Recent Security Events</h2></div><button class="text-btn" data-go="audit">VIEW ALL ↗</button></div><div id="recentAudit" class="events"><div class="empty">Loading security events…</div></div></section>
+</section>
+<section id="policiesPage" class="page hidden">
+  <div class="page-heading"><div><div class="eyebrow"><span></span> ZERO-TRUST CONTROL PLANE</div><h1>Policy <em>Engine</em></h1><p>Define, prioritize and enforce rules governing every AI agent action.</p></div><button id="newPolicyBtn" class="primary">＋ Create Policy</button></div>
+  <div class="policy-metrics"><div class="panel mini-stat"><small>POLICY RULES</small><b id="policyCount">—</b><span>Configured rules</span></div><div class="panel mini-stat"><small>ACTIVE POLICIES</small><b id="activePolicyCount">—</b><span>Currently enforced</span></div><div class="panel mini-stat"><small>DEFAULT POSTURE</small><b class="safe-text">ZERO TRUST</b><span>Deny unless explicitly allowed</span></div><div class="panel mini-stat"><small>ENFORCEMENT</small><b class="safe-text">ACTIVE</b><span>Backend connected</span></div></div>
+  <section class="panel policy-panel"><div class="panel-title"><div><small>ENFORCEMENT CONFIGURATION</small><h2>Policy Rules</h2></div><span class="tag live-tag">● BACKEND SYNC</span></div><div class="toolbar"><input id="policySearch" placeholder="⌕  Search policies or scopes…"><span class="muted">PRIORITY ORDER</span></div><div class="table-wrap"><table><thead><tr><th>POLICY / DESCRIPTION</th><th>SCOPE</th><th>DECISION</th><th>PRIORITY</th><th>STATUS</th></tr></thead><tbody id="policyRows"><tr><td colspan="5" class="empty">Loading policies…</td></tr></tbody></table></div><div class="note">POLICY CHANGES ARE SAVED TO THE BACKEND JSON STORE.</div></section>
+</section>
+<section id="agentsPage" class="page hidden">
+  <div class="page-heading"><div><div class="eyebrow"><span></span> IDENTITY, TOOLS & HUMAN CONTROL</div><h1>Agent <em>Command</em></h1><p>Manage agent identities, registered capabilities, human approvals and adversarial security tests.</p></div><button id="refreshAgents" class="secondary">↻ Refresh</button></div>
+  <div class="policy-metrics">
+    <div class="panel mini-stat"><small>REGISTERED AGENTS</small><b id="agentCount">—</b><span>Identity records</span></div>
+    <div class="panel mini-stat"><small>ACTIVE TOOLS</small><b id="toolCount">—</b><span>Signed capabilities</span></div>
+    <div class="panel mini-stat"><small>PENDING APPROVALS</small><b id="approvalCount">—</b><span>Awaiting reviewer</span></div>
+    <div class="panel mini-stat"><small>SECURITY TESTS</small><b id="scenarioCount">05</b><span>Brochure-aligned scenarios</span></div>
+  </div>
+  <section class="panel policy-panel">
+    <div class="panel-title"><div><small>ZERO-TRUST IDENTITIES</small><h2>Registered AI Agents</h2></div><span class="tag live-tag">● LIVE API</span></div>
+    <div class="table-wrap"><table><thead><tr><th>AGENT</th><th>ROLE</th><th>PERMISSIONS</th><th>STATUS</th><th>CONTROL</th></tr></thead><tbody id="agentRows"><tr><td colspan="5" class="empty">Loading identities…</td></tr></tbody></table></div>
+  </section>
+  <section class="panel policy-panel">
+    <div class="panel-title"><div><small>CAPABILITY REGISTRY</small><h2>Registered Tools</h2></div><span class="tag live-tag">● SIGNED METADATA</span></div>
+    <div class="table-wrap"><table><thead><tr><th>TOOL</th><th>REQUIRED PERMISSION</th><th>RISK</th><th>STATUS</th></tr></thead><tbody id="toolRows"><tr><td colspan="4" class="empty">Loading tools…</td></tr></tbody></table></div>
+  </section>
+  <section class="panel policy-panel">
+    <div class="panel-title"><div><small>HUMAN-IN-THE-LOOP CONTROL</small><h2>Approval Queue</h2></div><button id="refreshApprovals" class="secondary">↻ Refresh</button></div>
+    <div id="approvalRows" class="approval-list"><div class="empty">Loading approval requests…</div></div>
+  </section>
+  <section class="panel policy-panel">
+    <div class="panel-title"><div><small>ADVERSARIAL VALIDATION</small><h2>Security Scenario Lab</h2></div><button id="runAllScenarios" class="primary">▶ Run all tests</button></div>
+    <p class="muted">Run synthetic, defensive test cases against the real policy gateway. No external tools are executed.</p>
+    <div id="scenarioRows" class="scenario-list"><div class="empty">Loading scenarios…</div></div>
+    <div id="scenarioSummary" class="evaluation hidden"></div>
+  </section>
+</section>
+<section id="auditPage" class="page hidden"> class="page hidden">
+  <div class="page-heading"><div><div class="eyebrow"><span></span> FORENSICS & TRACEABILITY</div><h1>Audit <em>Explorer</em></h1><p>Review decisions emitted by the AgentShield X gateway.</p></div><div class="heading-actions"><button id="verifyAudit" class="secondary">◇ Verify integrity</button><button id="refreshAudit" class="secondary">↻ Refresh</button></div></div>
+  <section class="panel policy-panel"><div class="panel-title"><div><small>IMMUTABLE-STYLE EVENT FEED</small><h2>Gateway Audit Log</h2></div><span class="tag live-tag">● LIVE API</span></div><div id="auditIntegrity" class="evaluation hidden"></div><div id="allAudit" class="events"><div class="empty">Loading audit events…</div></div></section>
+</section>
+<footer><span>AGENTSHIELD X <b>·</b> ZERO-TRUST AI SECURITY</span><span>SECURE BY DESIGN ◈</span></footer>
+</main>
+<div id="modal" class="modal hidden"><form id="policyForm" class="modal-card"><div class="panel-title"><div><small>POLICY CONFIGURATION</small><h2>Create Policy Rule</h2></div><button type="button" id="closeModal" class="close">×</button></div><label>POLICY NAME<input name="name" required minlength="3" placeholder="e.g. Restrict sensitive API calls"></label><label>DESCRIPTION<input name="description" placeholder="Describe when this policy applies"></label><div class="form-row"><label>SCOPE<select name="scope"><option>API</option><option>DATABASE</option><option>FILE SYSTEM</option><option>NETWORK</option></select></label><label>DECISION<select name="decision"><option>DENY</option><option>ALLOW</option><option>REVIEW</option></select></label></div><label>PRIORITY<select name="priority"><option>MEDIUM</option><option>HIGH</option><option>CRITICAL</option><option>LOW</option></select></label><button class="primary" type="submit">Save Policy ↗</button><div id="formError" class="form-error"></div></form></div>
+<script src="/assets/app.js?v=redline-backend-v5"></script>
+</body></html>
